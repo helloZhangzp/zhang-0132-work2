@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>小提琴社招新</title>
+    <style>
+        /* 修复：只给正文 div 加 margin，不影响音频 */
+        body > div:not(.audio-wrapper) { margin: 40px 0; }
+        /* 修复：用 min-height 防止图片和视频把页面撑爆导致错位 */
+        section { min-height: 820px; }
+        a { margin: 0 8px; }
+
+        /* 音频播放器样式 */
+        .audio-wrapper {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 8px 15px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+        }
+        .audio-wrapper button {
+            background: #6b4f3c;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .audio-wrapper button:hover { background: #8b6f5c; }
+        #bgAudio { display: none; }
+
+        table { border-collapse: collapse; margin: 20px 0; }
+        td, th { padding: 8px 12px; }
+
+        a[href="#"] {
+            display: inline-block;
+            margin-top: 15px;
+            color: #6b4f3c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a[href="#"]:hover { text-decoration: underline; }
+
+        /* 图片和视频的统一样式 */
+        section img, section video {
+            display: block;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            /* 如果图片加载失败，给个灰底占位，防止文本乱跑 */
+            background-color: #e0e0e0; 
+            min-height: 200px;
+        }
+
+        h2 {
+            color: #3e2c1c;
+            border-left: 5px solid #6b4f3c;
+            padding-left: 15px;
+        }
+
+        input[type="text"], select, textarea {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        input[type="submit"], input[type="reset"] {
+            background: #6b4f3c;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover { background: #8b6f5c; }
+    </style>
+</head>
+<body>
+<!-- 左上角播放背景音乐 -->
+<div class="audio-wrapper">
+    <audio id="bgAudio" src="bg.mp3" preload="none"></audio>
+    <button onclick="document.getElementById('bgAudio').play()">🎵 播放背景音乐</button>
+    <button onclick="document.getElementById('bgAudio').pause()" style="background: #9b7f6c;">⏸️ 暂停</button>
+</div>
+
+<br><br>
+<h1>小提琴社团招新</h1>
+
+<!-- 锚点导航链接 -->
+<p>
+<a href=" ">社团简介</a > |
+<a href="#active">活动安排</a > |
+<a href="#show">风采展示</a > |
+<a href="#story">社员故事</a > |
+<a href="#form">在线报名</a >
+</p >
+
+<a name="intro"></a >
+<section>
+<h2>社团简介</h2>
+<p>
+小提琴社是面向全校音乐爱好者的文艺类学生社团，无论你是拥有多年演奏功底，还是从未接触过弦乐、纯粹被小提琴优美的音色吸引，我们都热烈欢迎你的到来。小提琴音色优雅细腻，既能演绎恢弘的古典乐章，也能够演奏温柔治愈的流行乐曲。社团致力于为校内喜欢弦乐的同学们搭建交流学习的平台，打破“小提琴入门很难”的刻板印象。社团会定期开设零基础入门公开课，从持琴姿势、运弓、识谱基础开始教学，由社团内技术优秀的高年级社员担任讲师，手把手为新成员答疑解惑。
+
+在这里，你可以学习基础乐理、简单练习曲，也可以参与室内乐重奏小组，和伙伴们一起排练二重奏、四重奏作品。社团每学期会举办小型音乐会、校园文艺汇演，给社员上台表演展示自我的舞台。同时我们也会组织音乐赏析活动，一起聆听经典小提琴名曲，分享演奏心得。我们不只追求高超演奏技巧，更希望大家享受音乐带来的快乐。很多零基础同学在社团坚持练习之后，也可以完整演奏简单优美的曲目。课余放下课业压力，用琴弦诉说情绪，认识一群志同道合热爱弦乐的朋友。如果你向往小提琴悠扬动人的旋律，渴望学习一门优雅乐器，小提琴社期待你的加入。
+</p >
+<a href="#">返回顶部</a >
+</section>
+
+<a name="active"></a >
+<section>
+<h2>活动安排</h2>
+<table border="1" width="650">
+    <tr>
+        <th colspan="4">小提琴社 2026 年春季学期活动安排表</th>
+    </tr>
+    <tr align="center">
+        <th>活动名称</th>
+        <th>时间</th>
+        <th>教室</th>
+        <th>负责人</th>
+    </tr>
+    <tr>
+        <td rowspan="2">新成员见面会<br>小提琴基础教学公开课</td>
+        <td>3月7日</td>
+        <td rowspan="2">艺术楼305教室</td>
+        <td>陈同学</td>
+    </tr>
+    <tr>
+        <td>3月14日</td>
+        <td>刘同学</td>
+    </tr>
+    <tr>
+        <td>室内乐重奏排练</td>
+        <td>4月11日</td>
+        <td>艺术楼排练厅</td>
+        <td>周同学</td>
+    </tr>
+    <tr>
+        <td>春季小型音乐会</td>
+        <td>5月16日</td>
+        <td>学校大礼堂小剧场</td>
+        <td>吴同学</td>
+    </tr>
+</table>
+<a href="#">返回顶部</a >
+</section>
+
+<a name="show"></a >
+<section>
+<h2>风采展示</h2>
+<!-- 【重点修复】图片超链接，去掉了所有多余的空格，确保标签不被识别成纯文本 -->
+<a href="club_intro.html">< img src="violin.jpg" width="520" alt="小提琴社团日常演奏"></a >
+
+<br>
+<h3>社团活动短视频</h3>
+<!-- 【重点修复】用 video 替代 embed，并加上 controls 让视频能播放 -->
+<video src="violin.mp4" width="520" height="310" controls></video>
+
+<br>
+<a href="#">返回顶部</a >
+</section>
+
+<a name="story"></a >
+<section>
+<h2>社员故事</h2>
+<p>
+进入大学之前，我一直对小提琴充满向往，但从来没有机会正式学习，高考结束之后也只是简单听过一些小提琴乐曲。入学看到小提琴社招新摆点，听见现场悠扬琴声，鼓起勇气报了名，当时我连琴都没有。刚入社的时候，我连怎么拿琴、怎么握弓都不懂，运弓的时候杂音不断，手指按弦也总找不准位置，反复练习也不见起色，内心十分受挫，一度怀疑自己是不是没有学习弦乐的天赋。
+
+社团的学长学姐十分耐心，课后留下来帮我纠正姿势，告诉我小提琴入门本来就要熬过枯燥的基础阶段，不要急于求成。每周我从不缺席社团教学课程，课下利用课余碎片时间做简单练习，慢慢克服运弓不稳的问题。经过两个多月坚持，我终于可以完整拉出第一首简单曲子，内心满是成就感。社团里面同学水平各不相同，有从小学习小提琴的大佬，也有和我一样从零起步的新手，大家不会因为技术高低区别对待，练习时互相帮忙纠错，分享乐谱、分享练琴经验。
+
+之后我加入社团重奏小组，和伙伴一起排练二重奏，一起为校园小型音乐会做准备。登台表演的时候虽然紧张，但是和同伴一起演奏旋律的体验无比珍贵。在小提琴社，我收获的不只是演奏技能，更是一群热爱音乐的好朋友。大学时光转瞬即逝，能拥有一份属于自己的音乐爱好，是非常难得的体验。很多新生会害怕没有基础不敢报名社团，我想告诉大家：基础从来不是门槛，热爱才最重要。只要愿意沉下心一点点练习，你也可以拉出动人旋律。期待更多喜欢弦乐的新朋友来到小提琴社，一起感受琴弦的魅力，奏响属于我们的青春乐章。
+</p >
+<a href="#">返回顶部</a >
+</section>
+
+<a name="form"></a >
+<section>
+<h2>在线报名</h2>
+<form>
+<table border="1">
+    <tr>
+        <td>姓名</td>
+        <td><input type="text" name="username"></td>
+    </tr>
+    <tr>
+        <td>性别</td>
+        <td>
+            <input type="radio" name="gender" value="男">男
+            <input type="radio" name="gender" value="女">女
+        </td>
+    </tr>
+    <tr>
+        <td>出生日期</td>
+        <td>
+            年:<input type="text" name="year" size="4">
+            月:<input type="text" name="mon" size="2">
+            日:<input type="text" name="day" size="2">
+        </td>
+    </tr>
+    <tr>
+        <td>手机</td>
+        <td><input type="text" name="phone"></td>
+    </tr>
+    <tr>
+        <td>邮箱</td>
+        <td><input type="text" name="email"></td>
+    </tr>
+    <tr>
+        <td>是否有小提琴基础</td>
+        <td>
+            <input type="radio" name="base" value="有">有
+            <input type="radio" name="base" value="无">无
+        </td>
+    </tr>
+    <tr>
+        <td>兴趣方向（多选）</td>
+        <td>
+            <input type="checkbox" name="hobby" value="独奏">独奏
+            <input type="checkbox" name="hobby" value="重奏合奏">重奏合奏
+            <input type="checkbox" name="hobby" value="舞台演出">舞台演出
+            <input type="checkbox" name="hobby" value="音乐赏析">音乐赏析
+        </td>
+    </tr>
+    <tr>
+        <td>年级</td>
+        <td>
+            <select name="grade">
+                <option>大一</option>
+                <option>大二</option>
+                <option>大三</option>
+                <option>大四</option>
+                <option>研究生</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>自我介绍</td>
+        <td>
+            <textarea name="intro" rows="5" cols="38" placeholder="请简单介绍自己、以及加入小提琴社的理由……"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>是否服从活动安排</td>
+        <td>
+            <input type="radio" name="arrange" value="是">是
+            <input type="radio" name="arrange" value="否">否
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </td>
+    </tr>
+</table>
+</form>
+<a href="#">返回顶部</a >
+</section>
+
+</body>
+</html>
